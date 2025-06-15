@@ -1,0 +1,38 @@
+.page-header-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+}
+
+.nav-items {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding-left: 0;
+    justify-content: space-between;
+    width: 400px;
+}
+
+.nav-item {
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s;
+    width: 100px;
+}
+
+.nav-item:hover {
+    background-color: #3d3d3d;
+    cursor: pointer;
+}
+
+.nav-item.active {
+    background-color: #3d3d3d;
+    font-weight: 500;
+}
+
