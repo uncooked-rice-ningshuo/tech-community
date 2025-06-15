@@ -21,7 +21,6 @@ const headerStyle: React.CSSProperties = {
 const contentStyle: React.CSSProperties = {
   textAlign: "center",
   minHeight: 120,
-  lineHeight: "120px",
   color: "#000",
   backgroundColor: "#f4f4f4",
 };

@@ -71,11 +71,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 2rem 0;
 }
 
 .tip-content {
     width: 90%; 
-    min-width: 900px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -131,57 +131,80 @@
     width: 300px;
 }
 
-.main-container {}
+.main-container {
+    width: 100%;
+}
 
-.main-tabs {
+.tabs-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.tabs {
     padding: auto;
-    margin: auto;
     font-size: 2rem;
 }
 
-/* 文章列表 */
-.article-list {
-    /* margin-top: 16px; */
+.article-search {
+    width: 200px;
+}
+
+.article-search-input {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 .article-item {
-    /* padding: 16px; */
-    /* border-radius: 8px;
+    border-radius: 8px;
     transition: background-color 0.3s;
-    cursor: pointer; */
+    cursor: pointer;
 }
 
 .article-item:hover {
     background-color: #f0f5ff;
 }
 
-/* .article-title {
-    font-size: 18px;
+.article-title {
+    font-size: 1.5rem;
+    line-height: 3rem;
     font-weight: 500;
     color: #333;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 100%;
-} */
+    text-align: left;
+}
 
-/* .article-info {
+.article-meta {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-top: 8px;
+    margin: 8px 0;
     color: #666;
-} */
+}
 
-/* .article-author {
+.article-author {
     font-weight: 500;
-} */
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
 
-/* .article-time {
+.article-author-name {
+    margin-left: 0.5rem;
+}
+
+.article-time {
     color: #999;
-} */
+}
 
-/* .article-content {
+.article-content {
     margin-top: 12px;
     color: #666;
     display: -webkit-box;
@@ -189,17 +212,18 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-} */
+    text-align: left;
+}
 
-/* .article-image {
+.article-image {
     width: 200px;
     height: 120px;
     overflow: hidden;
     border-radius: 4px;
-} */
+}
 
-/* .article-image img {
+.article-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-} */
+}

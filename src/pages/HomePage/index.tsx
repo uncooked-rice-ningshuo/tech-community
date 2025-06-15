@@ -1,7 +1,9 @@
-import { useState } from "react";
-import { Carousel, Tabs, List, Tooltip, Avatar, Tag } from "antd";
+import { useState, useRef } from "react";
+import { Carousel, Tabs, List, Tooltip, Avatar, Tag, Input } from "antd";
 import { useLocation, useNavigate } from "react-router-dom";
+import { SearchOutlined } from '@ant-design/icons';
 import "./index.css";
+import mockArticlesData from "../../mock/articles.json";
 
 interface CarouselItem {
   id: number;
@@ -42,46 +44,16 @@ const carouselItems: CarouselItem[] = [
 ];
 
 // 模拟数据
-const mockArticles: Article[] = [
-  {
-    id: 1,
-    title: "Unite Shanghai 2024，我们回来了",
-    content: "Unite Shanghai 2024将于7月23-25日在上海举行，这是一场技术盛会，将有来自全球的开发者参与。本次大会将围绕游戏开发、AR/VR、人工智能等多个主题展开讨论。",
-    author: "Unity官方",
-    time: "2024-07-01",
-    image: "/images/unite.svg",
-    category: "技术大会"
-  },
-  {
-    id: 2,
-    title: "工程师成长之路",
-    content: "从初级工程师到高级工程师，需要经历哪些成长？本文将分享一位资深工程师的成长经验和技术积累。",
-    author: "技术先锋",
-    time: "2024-06-28",
-    category: "职业成长"
-  },
-  {
-    id: 3,
-    title: "React 18新特性详解",
-    content: "React 18带来了哪些新特性？如何利用这些特性提升应用性能？本文将详细介绍React 18的并发渲染、自动批处理等特性。",
-    author: "React专家",
-    time: "2024-06-25",
-    image: "/images/react.svg",
-    category: "前端技术"
-  },
-  {
-    id: 4,
-    title: "TypeScript高级类型体操",
-    content: "TypeScript的类型系统非常强大，本文将介绍一些高级类型技巧，帮助你更好地利用TypeScript进行开发。",
-    author: "TS爱好者",
-    time: "2024-06-20",
-    category: "前端技术"
-  },
-];
+const mockArticles: {
+  total: number;
+  list: Article[];
+} = mockArticlesData;
 
 const HomePage: React.FC = () => {
   const navigate = useNavigate();
   const [activeTabKey, setActiveTabKey] = useState("hot");
+  const [searchValue, setSearchValue] = useState("");
+  const searchTimer = useRef<NodeJS.Timeout | null>(null);
 
   const handleTabChange = (key: string) => {
     setActiveTabKey(key);
@@ -89,6 +61,27 @@ const HomePage: React.FC = () => {
 
   const handleArticleClick = (id: number) => {
     navigate(`/article/${id}`);
+  }
+
+  // 设定搜索框的值
+  const handleSearch = (value: string) => {
+    setSearchValue(value);
+
+    // 防抖处理
+    if (searchTimer.current) {
+        clearTimeout(searchTimer.current);
+    }
+
+    searchTimer.current = setTimeout(() => {
+        // 执行搜索逻辑
+        // console.log("执行搜索逻辑", value);
+    }, 300);
+  }
+
+  // 回车搜索
+  const handleSearchEnter = () => {
+    // 执行搜索逻辑
+    console.log("执行搜索逻辑", searchValue);
   }
 
   return (
@@ -132,28 +125,59 @@ const HomePage: React.FC = () => {
         <div className="row-two-container">
           <div className="row-two-left">
             <div className="main-container">
-              <Tabs
-                className="main-tabs"
-                activeKey={activeTabKey}
-                onChange={handleTabChange}
-                items={[
-                  { key: 'hot', label: '热门' },
-                  { key: 'new', label: '最新' },
-                ]}
-              />
+              <div className="tabs-container">
+                <Tabs
+                  className="tabs"
+                  activeKey={activeTabKey}
+                  onChange={handleTabChange}
+                  items={[
+                    { key: 'hot', label: '热门' },
+                    { key: 'new', label: '最新' },
+                  ]}
+                />
+
+                <div className="article-search">
+                  <Input 
+                    prefix={<SearchOutlined />}
+                    className="article-search-input"
+                    placeholder="搜索文章" 
+                    value={searchValue}
+                    onChange={(e) => handleSearch(e.target.value)}
+                    onKeyDown={(e) => e.key === "Enter" && handleSearchEnter()}
+                  />
+                </div>
+              </div>
 
               <div className="article-list">
                 <List
                   itemLayout="vertical"
                   size="large"
-                  dataSource={mockArticles}
+                  dataSource={mockArticles.list}
                   renderItem={(item) => (
                     <List.Item
                       key={item.id}
                       className="article-item"
                       onClick={() => handleArticleClick(item.id)}
+                      extra={
+                        item.image && (
+                          <div className="article-image">
+                            <img alt={item.title} src={item.image} />
+                          </div>
+                        )
+                      }
                     >
-                      
+                      <div className="article-title">{item.title}</div>
+                      <div className="article-meta">
+                        <div className="article-author">
+                          <Avatar size="small" src={item.image} />
+                          <span className="article-author-name">{item.author}</span>
+                        </div>
+                        <div className="article-time">{item.time}</div>
+                        <div className="article-category">
+                          <Tag color="blue">{item.category}</Tag>
+                        </div>
+                      </div>
+                      <div className="article-content">{item.content}</div>
                     </List.Item>
                   )}
                 />
