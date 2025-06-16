@@ -227,3 +227,119 @@
     height: 100%;
     object-fit: cover;
 }
+
+
+/* 文章榜单样式 */
+.hot-article-list {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.article-rank-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.article-rank-icon {
+  font-size: 18px;
+  margin-right: 8px;
+}
+
+.article-rank-title {
+  font-size: 16px;
+  font-weight: 500;
+  flex-grow: 1;
+}
+
+.article-rank-action {
+  font-size: 14px;
+  color: #8c8c8c;
+  cursor: pointer;
+}
+
+.article-rank-action:hover {
+  color: #1890ff;
+}
+
+.article-rank-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.article-rank-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  cursor: pointer;
+}
+
+.article-rank-item:hover .article-rank-item-title {
+  color: #1890ff;
+}
+
+.article-rank-number {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  margin-right: 12px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #8c8c8c;
+}
+
+.rank-1, .rank-2, .rank-3 {
+  color: #fff;
+}
+
+.rank-1 {
+  background-color: #f5222d;
+}
+
+.rank-2 {
+  background-color: #fa8c16;
+}
+
+.rank-3 {
+  background-color: #faad14;
+}
+
+.article-rank-item-title {
+  font-size: 14px;
+  color: #262626;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-grow: 1;
+}
+
+.article-rank-footer {
+  text-align: center;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.article-rank-more {
+  font-size: 14px;
+  color: #8c8c8c;
+  cursor: pointer;
+}
+
+.article-rank-more:hover {
+  color: #1890ff;
+}
+
+.right-container {
+  width: 100%;
+  padding-left: 20px;
+}

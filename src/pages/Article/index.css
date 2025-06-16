@@ -1,0 +1,154 @@
+.article {
+    width: 100%;
+    position: relative;
+}
+
+.article-bg {
+    width: 100%;
+    background-color: #141414;
+    height: 300px;
+}
+
+.article-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    top: -10rem;
+    background-color: #fff;
+    border-radius: 1rem;
+}
+
+.article-loading {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+}
+
+.article-header {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 20px;
+}
+
+.article-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.article-meta {
+    display: flex;
+    align-items: center;
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.article-author {
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.article-author .avatar {
+    margin-right: 8px;
+}
+
+.article-time {
+  margin-right: 15px;
+}
+
+.article-category {
+  margin-right: 15px;
+}
+
+.article-content {
+  line-height: 1.8;
+  font-size: 16px;
+  color: #333;
+}
+
+.article-content p {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.article-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  margin: 20px 0;
+  border-radius: 8px;
+}
+
+.article-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #eaeaea;
+}
+
+.nav-button {
+  padding: 8px 16px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.nav-button:hover {
+  color: #1890ff;
+  border-color: #1890ff;
+}
+
+.related-articles {
+  margin-top: 40px;
+}
+
+.related-articles h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.related-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.related-item {
+  width: calc(33.33% - 14px);
+  cursor: pointer;
+}
+
+.related-item:hover .related-title {
+  color: #1890ff;
+}
+
+.related-title {
+  font-size: 16px;
+  margin-top: 8px;
+  color: #333;
+  transition: color 0.3s;
+}
+
+@media (max-width: 768px) {
+  .article-container {
+    padding: 15px;
+  }
+  
+  .article-title {
+    font-size: 22px;
+  }
+  
+  .related-item {
+    width: 100%;
+  }
+}

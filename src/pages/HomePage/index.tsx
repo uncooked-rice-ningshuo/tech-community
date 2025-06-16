@@ -50,10 +50,11 @@ const mockArticles: {
 } = mockArticlesData;
 
 const HomePage: React.FC = () => {
-  const navigate = useNavigate();
-  const [activeTabKey, setActiveTabKey] = useState("hot");
-  const [searchValue, setSearchValue] = useState("");
-  const searchTimer = useRef<NodeJS.Timeout | null>(null);
+  const navigate = useNavigate(); // 导航钩子
+  const [activeTabKey, setActiveTabKey] = useState("hot"); // 活动标签的键值
+  const [searchValue, setSearchValue] = useState(""); // 搜索框的值
+  const [rankArticles, setRankArticles] = useState(mockArticles.list.slice(0, 5)); // 模拟文章排行数据
+  const searchTimer = useRef<NodeJS.Timeout | null>(null); // 搜索定时器
 
   const handleTabChange = (key: string) => {
     setActiveTabKey(key);
@@ -82,6 +83,13 @@ const HomePage: React.FC = () => {
   const handleSearchEnter = () => {
     // 执行搜索逻辑
     console.log("执行搜索逻辑", searchValue);
+  }
+
+  // 换一换功能
+  const handleRefreshRank = () => {
+    // 随机打乱文章列表顺序
+    const shuffled = [...mockArticles.list].sort(() => 0.5 - Math.random());
+    setRankArticles(shuffled.slice(0, 5));
   }
 
   return (
@@ -115,7 +123,7 @@ const HomePage: React.FC = () => {
       <div className="tip">
         <div className="tip-content">
           <div className="tip-title">Tip</div>
-          <div className="tip-description">是临时起意是蓄谋已久 是年轻自由而热烈的我们 凌晨6点的日出又怎么不算浪漫呢</div>
+          <div className="tip-description">是临时起意是蓄谋已久 是年轻自由而激烈的我们 凌晨6点的日出又怎么不算浪漫呢</div>
         </div>
         <div className="tip-button">
           查看更多
@@ -184,7 +192,32 @@ const HomePage: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="row-two-right"></div>
+          <div className="row-two-right">
+            <div className="right-container">
+              <div className="hot-article-list">
+                <div className="article-rank-header">
+                  <div className="article-rank-icon">📃</div>
+                  <div className="article-rank-title">文章榜</div>
+                  <div className="article-rank-action" onClick={handleRefreshRank}>🔄 换一换</div>
+                </div>
+                <div className="article-rank-list">
+                  {rankArticles.map((article, index) => (
+                    <div 
+                      key={article.id} 
+                      className="article-rank-item"
+                      onClick={() => handleArticleClick(article.id)}
+                    >
+                      <div className={`article-rank-number rank-${index + 1}`}>{index + 1}</div>
+                      <div className="article-rank-item-title">{article.title}</div>
+                    </div>
+                  ))}
+                </div>
+                <div className="article-rank-footer">
+                  <div className="article-rank-more">查看更多 ›</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

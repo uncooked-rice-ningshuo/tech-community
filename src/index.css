@@ -75,3 +75,7 @@ hr {
 .ant-layout-footer {
   padding: 0;
 }
+
+.ant-typography {
+  font-size: 1rem;
+}
