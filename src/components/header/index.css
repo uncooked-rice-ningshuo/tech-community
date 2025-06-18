@@ -36,3 +36,77 @@
     font-weight: 500;
 }
 
+
+/* 添加搜索框样式 */
+.search-container {
+    width: 200px;
+}
+
+.search-input {
+    width: 100%;
+}
+
+/* 添加响应式样式 */
+@media (max-width: 992px) {
+    .page-header-container {
+        padding: 0 10px;
+    }
+    
+    .nav-items {
+        width: 350px;
+    }
+    
+    .nav-item {
+        width: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-header-container {
+        padding: 10px;
+    }
+    
+    .logo {
+        width: 20%;
+        min-width: 104px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    
+    .nav-items {
+        width: 80%;
+        min-width: 416px;
+        justify-content: space-around;
+        margin-bottom: 10px;
+    }
+    
+    .nav-item {
+        width: auto;
+        padding: 0 10px;
+    }
+
+    .search-container {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .page-header-container {
+        justify-content: center;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .nav-items {
+        min-width: 320px;
+        justify-content: space-around;
+        margin-bottom: 10px;
+    }
+
+    .nav-item {
+        width: auto;
+    }
+}
+

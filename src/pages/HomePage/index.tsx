@@ -167,11 +167,11 @@ const HomePage: React.FC = () => {
                       className="article-item"
                       onClick={() => handleArticleClick(item.id)}
                       extra={
-                        item.image && (
+                        item.image && window.innerWidth > 768 ? (
                           <div className="article-image">
                             <img alt={item.title} src={item.image} />
                           </div>
-                        )
+                        ) : null
                       }
                     >
                       <div className="article-title">{item.title}</div>
@@ -186,6 +186,11 @@ const HomePage: React.FC = () => {
                         </div>
                       </div>
                       <div className="article-content">{item.content}</div>
+                      {item.image && window.innerWidth <= 768 ? (
+                        <div className="article-image">
+                          <img alt={item.title} src={item.image} />
+                        </div>
+                      ) : null}
                     </List.Item>
                   )}
                 />

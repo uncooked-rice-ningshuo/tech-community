@@ -2,3 +2,31 @@
   width: 100%;
   height: 100vh;
 }
+
+/* 添加响应式布局样式 */
+@media (max-width: 768px) {
+  .layoutPage {
+    height: auto;
+    min-height: 100vh;
+  }
+}
+
+/* 确保页脚在内容较少时仍位于底部 */
+.ant-layout {
+  min-height: 100vh;
+}
+
+/* 调整页脚样式 */
+.ant-layout-footer {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #141414;
+  color: #fff;
+}
+
+@media (max-width: 576px) {
+  .ant-layout-footer {
+    padding: 15px 0;
+    font-size: 12px;
+  }
+}
