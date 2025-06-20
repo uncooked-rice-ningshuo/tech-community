@@ -185,7 +185,7 @@ const HomePage: React.FC = () => {
                           <Tag color="blue">{item.category}</Tag>
                         </div>
                       </div>
-                      <div className="article-content">{item.content}</div>
+                      <div className="article-content-bf">{item.content}</div>
                       {item.image && window.innerWidth <= 768 ? (
                         <div className="article-image">
                           <img alt={item.title} src={item.image} />
@@ -212,7 +212,6 @@ const HomePage: React.FC = () => {
                       className="article-rank-item"
                       onClick={() => handleArticleClick(article.id)}
                     >
-                      <div className={`article-rank-number rank-${index + 1}`}>{index + 1}</div>
                       <div className="article-rank-item-title">{article.title}</div>
                     </div>
                   ))}

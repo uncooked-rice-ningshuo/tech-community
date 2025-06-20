@@ -208,7 +208,7 @@
     color: #999;
 }
 
-.article-content {
+.article-content-bf {
     margin-top: 12px;
     color: #666;
     display: -webkit-box;
@@ -261,6 +261,7 @@
 .article-rank-title {
   font-size: 16px;
   font-weight: 500;
+  text-align: left;
   flex-grow: 1;
 }
 
@@ -277,11 +278,14 @@
 .article-rank-list {
   display: flex;
   flex-direction: column;
+  justify-content: left;
+  align-items:flex-start;
 }
 
 .article-rank-item {
   display: flex;
   align-items: center;
+  justify-content: left;
   padding: 8px 0;
   cursor: pointer;
 }
