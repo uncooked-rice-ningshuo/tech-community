@@ -4,6 +4,8 @@
 
 Tech Community 是一个基于 React 和 TypeScript 开发的技术社区网站，旨在为技术爱好者提供一个分享知识、交流经验的平台。该项目采用现代前端技术栈，实现了响应式设计，确保在不同设备上都能提供良好的用户体验。
 
+![image-20250625091834820](C:/Users/HUAWEI/AppData/Roaming/Typora/typora-user-images/image-20250625091834820.png)
+
 ## 2. 技术栈
 
 - **前端框架**：React 18
@@ -68,11 +70,24 @@ Tech Community 是一个基于 React 和 TypeScript 开发的技术社区网站�
 导航组件具有响应式设计，在不同屏幕尺寸下会调整布局：
 
 - 大屏幕：Logo、导航菜单和搜索框并排显示
+
+![image-20250625091906924](C:/Users/HUAWEI/AppData/Roaming/Typora/typora-user-images/image-20250625091906924.png)
+
 - 中等屏幕：调整导航项宽度和内边距
+
+![image-20250625091930323](C:/Users/HUAWEI/AppData/Roaming/Typora/typora-user-images/image-20250625091930323.png)
+
 - 小屏幕：隐藏搜索框，调整导航菜单布局
+
+![image-20250625091954187](C:/Users/HUAWEI/AppData/Roaming/Typora/typora-user-images/image-20250625091954187.png)
+
 - 超小屏幕：隐藏 Logo，只显示导航菜单
 
+![image-20250625092009295](C:/Users/HUAWEI/AppData/Roaming/Typora/typora-user-images/image-20250625092009295.png)
+
 ### 4.3 首页 (HomePage)
+
+![image-20250625091834820](C:/Users/HUAWEI/AppData/Roaming/Typora/typora-user-images/image-20250625091834820.png)
 
 首页是网站的主要入口，包含以下功能模块：
 
@@ -90,6 +105,10 @@ Tech Community 是一个基于 React 和 TypeScript 开发的技术社区网站�
 首页实现了响应式设计，在不同屏幕尺寸下会调整布局和元素大小，确保良好的用户体验。
 
 ### 4.4 文章详情页 (Article)
+
+![image-20250625092118388](C:/Users/HUAWEI/AppData/Roaming/Typora/typora-user-images/image-20250625092118388.png)
+
+![image-20250625092054184](C:/Users/HUAWEI/AppData/Roaming/Typora/typora-user-images/image-20250625092054184.png)
 
 文章详情页展示单篇文章的完整内容，包括：
 
@@ -135,9 +154,20 @@ Tech Community 是一个基于 React 和 TypeScript 开发的技术社区网站�
 项目实现了全面的响应式设计，通过媒体查询适配不同屏幕尺寸：
 
 - **大屏幕** (> 1200px)：完整布局，最大宽度 1200px
+
+![image-20250625092202449](C:/Users/HUAWEI/AppData/Roaming/Typora/typora-user-images/image-20250625092202449.png)
+
 - **中等屏幕** (992px - 1200px)：调整容器宽度和内边距
+
+![image-20250625092217116](C:/Users/HUAWEI/AppData/Roaming/Typora/typora-user-images/image-20250625092217116.png)
+
 - **平板** (768px - 992px)：调整导航布局，缩小元素间距
+
+![image-20250625092226606](C:/Users/HUAWEI/AppData/Roaming/Typora/typora-user-images/image-20250625092226606.png)
+
 - **手机** (< 768px)：单列布局，调整图片位置，隐藏部分次要元素
+
+![image-20250625092236772](C:/Users/HUAWEI/AppData/Roaming/Typora/typora-user-images/image-20250625092236772.png)
 
 ## 7. 项目运行
 
